@@ -23,6 +23,7 @@ def main():
         base_url="https://sandboxdnac.cisco.com",
         username="devnetuser",
         password="Cisco123!",
+        verify=False
     )
 
     # Use the devices.get_device_list() method to get a list of devices,
@@ -35,7 +36,7 @@ def main():
     # Same exact loop from previous course, just get the device ID
     # and management IP agree printed in a single neat row
     for device in devices["response"]:
-        print(f"ID: {device['id']}  IP: {device['managementIpAddress']}")
+        print(f"Hostname: {device['hostname']}  IP: {device['managementIpAddress']}")
 
 
 if __name__ == "__main__":
