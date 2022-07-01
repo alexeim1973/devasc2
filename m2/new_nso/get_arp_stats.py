@@ -20,13 +20,13 @@ def main():
     # a NSO always-on DevNet instance, so this is an example from a
     # reserved sandbox. As such, the IP addressing in the URL may change.
     # This will use RESTCONF, not the proprietary REST API.
-    api_path = "https://10.10.20.49/restconf/data"
+    api_path = "https://sandbox-nso-1.cisco.com/restconf/data"
 
     # Disable obnoxious SSL verification warnings for the sandbox
     requests.packages.urllib3.disable_warnings()
 
     # Basic authentication (no tokens) works for our simple example
-    basic_auth = ("developer", "C1sco12345")
+    basic_auth = ("developer", "Services4Ever")
 
     # For HTTP GET, we need to accept a variety of YANG data encoded as JSON.
     # This technique joins all the list elements together with a comma to
@@ -45,7 +45,7 @@ def main():
 
     # Loop over the selected devices, in this case, the distribution devices.
     # Intentionally including a bogus device so we can handle the failure "softly"
-    for device in ["dist-rtr01", "dist-rtr02", "bogus"]:
+    for device in ["core-rtr01", "core-rtr02", "bogus"]:
 
         # Build a device-specific URL in case we want to add more requests
         # later (collect more stats, etc)

@@ -7,7 +7,9 @@ public Cisco DevNet sandbox.
 """
 
 import requests
+import http
 
+# http.client.HTTPConnection.debuglevel = 1
 
 def meraki_get(resource):
     """
@@ -29,7 +31,7 @@ def meraki_get(resource):
 
     # Assemble the complete URL by appending the resource to the API path,
     # and issue HTTP GET using proper authentication headers
-    get_resp = requests.get(f"{api_path}/{resource}", headers=headers)
+    get_resp = requests.get(f"{api_path}/{resource}", headers=headers, verify=False)
 
     # If status code >= 400, raise HTTPError
     get_resp.raise_for_status()
