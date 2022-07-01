@@ -20,7 +20,7 @@ def main():
     # are available here, be sure to check for updates:
     # https://developer.cisco.com/site/aci/
     api_path = "https://sandboxapicdc.cisco.com/api"
-    body = {"aaaUser": {"attributes": {"name": "admin", "pwd": "ciscopsdt"}}}
+    body = {"aaaUser": {"attributes": {"name": "admin", "pwd": "!v3G@!4@Y"}}}
 
     # The ACI sandbox uses a self-signed cert at present, so let's ignore any
     # obvious security warnings for now.
